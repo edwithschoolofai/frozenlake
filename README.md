@@ -23,16 +23,16 @@ print(deeprl_hw1.envs.LEFT)
 
 는 0을 출력합니다.
 
-### 환경 특성
+### 환경 속성
 
-이 클래스는 다음과 같은 중요한 특성들이 있습니다. 
+이 클래스는 다음과 같은 중요한 속성들이 있습니다. 
 
 - `nS` :: 상태의 개수 
 - `nA` :: 움직임의 개수
 - `P` :: 전이, 보상, 단말
 
-특성 `P` 가 가치 순환법과 정책 순환법을 구현하는 데 가장 중요할 것입니다. 
-이 특성은 특정 맵핑 인스턴스에 대한 모델을 가지고 있습니다.
+`P` 가 가치 순환법과 정책 순환법을 구현하는 데 가장 중요한 속성입니다. 
+이 속성은 특정 맵핑 인스턴스에 대한 모델을 가지고 있습니다.
 다음과 같이 리스트에 대한 사전에 대한 사전을 형태를 가지고 있습니다.   
 
 ```
@@ -45,14 +45,12 @@ P[s][a] = [(prob, nextstate, reward, is_terminal), ...]
 env.P[0][deeprl_hw1.envs.LEFT]
 ```
 
-This would return the list: `[(1.0, 0, 0.0, False)]` for the
-`Deterministic-4x4-FrozenLake-v0` domain. There is one tuple in the
-list, so there is only one possible next state. The next state will be
-state 0, according to the second number in the tuple. This will be the
-next state 100\% of the time according to the first number in the
-tuple. The reward function for this state action pair `R(0,LEFT) = 0`
-according to the third number. The final tuple value says that the
-next state is not terminal.
+위 코드는 `Deterministic-4x4-FrozenLake-v0` 환경에 대한 `[(1.0, 0, 0.0, False)]` 를 반환합니다. 
+리스트 안에는 튜플이 한 개 있습니다. 따라서, 도달 가능한 다음 상태는 하나입니다. 
+튜플 속 두 번짹 값을 보면 다음 상태는 상태 0입니다.
+튜플의 첫 번째 값에 따르면 이 상태는 1의 확률로 다음 상태가 됩니다. 
+튜플의 세 번째 값에 따르면 이 상태와 움직임 쌍의 보상 함수는 `R(0,LEFT) = 0` 입니다. 
+튜플의 마지막 값에 따르면 다음 상태는 단말 상태가 아닙니다. 
 
 ##
 ### 임의의 정책 돌리기
