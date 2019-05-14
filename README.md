@@ -1,9 +1,9 @@
-# Reinforcement Learning
+# 강화 학습
 
-## OpenAI Gym Environments
-### Creating the environments
+## OpenAI Gym 환경
+### 새로운 환경 생성
 
-To create the environment use the following code snippet:
+다음 코드를 사용해서 새로운 환경을 생성합니다: 
 
 ```
 import gym
@@ -12,25 +12,24 @@ import deeprl_hw1.envs
 env = gym.make('Deterministic-4x4-FrozenLake-v0')
 ```
 
-### Actions
+### 움직임
 
-There are four actions: LEFT, UP, DOWN, RIGHT represented as
-integers. The `deep_rl_hw1.envs` contains variables to reference
-these. For example:
+네 가지 움직임이 있습니다. LEFT, UP, DOWN, RIGHT는 정수로 표현됩니다.
+`deep_rl_hw1.envs` 에 이와 관련된 변수들이 선언되어 있습니다. 예를 들면,
 
 ```
 print(deeprl_hw1.envs.LEFT)
 ```
 
-will print out the number 0.
+는 0을 출력합니다.
 
-### Environment Attributes
+### 환경 속성
 
-This class contains the following important attributes:
+이 클래스는 다음과 같은 중요한 속성들이 있습니다. 
 
-- `nS` :: number of states
-- `nA` :: number of actions
-- `P` :: transitions, rewards, terminals
+- `nS` :: 상태의 개수 
+- `nA` :: 움직임의 개수
+- `P` :: 전이, 보상, 단말
 
 The `P` attribute will be the most important for your implementation
 of value iteration and policy iteration. This attribute contains the
