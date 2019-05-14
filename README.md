@@ -23,25 +23,23 @@ print(deeprl_hw1.envs.LEFT)
 
 는 0을 출력합니다.
 
-### 환경 속성
+### 환경 특성
 
-이 클래스는 다음과 같은 중요한 속성들이 있습니다. 
+이 클래스는 다음과 같은 중요한 특성들이 있습니다. 
 
 - `nS` :: 상태의 개수 
 - `nA` :: 움직임의 개수
 - `P` :: 전이, 보상, 단말
 
-The `P` attribute will be the most important for your implementation
-of value iteration and policy iteration. This attribute contains the
-model for the particular map instance. It is a dictionary of
-dictionary of lists with the following form:
+특성 `P` 가 가치 순환법과 정책 순환법을 구현하는 데 가장 중요할 것입니다. 
+이 특성은 특정 맵핑 인스턴스에 대한 모델을 가지고 있습니다.
+다음과 같이 리스트에 대한 사전에 대한 사전을 형태를 가지고 있습니다.   
 
 ```
 P[s][a] = [(prob, nextstate, reward, is_terminal), ...]
 ```
 
-For example, to get the probability of taking action LEFT in state 0
-you would use the following code:
+예를 들면, 상태 0에서 LEFT로 움직일 확률을 구하려면 다음과 같은 코드를 쓰면 됩니다. 
 
 ```
 env.P[0][deeprl_hw1.envs.LEFT]
@@ -57,9 +55,9 @@ according to the third number. The final tuple value says that the
 next state is not terminal.
 
 ##
-### Running a random policy
+### 임의의 정책 돌리기
 
-example.py has an example of how to run a random policy on the domain.
+example.py 안에 임의의 정책으로 돌리는 예시가 담겨있습니다. 
 
-#Value Iteration
-The optimal policies for the different environments is in the <environment>.py files.
+#가치 순환법
+여러 환경에 대한 최적 정책은 <environment>.py 파일들에 있습니다 
